@@ -2,9 +2,8 @@ pipeline:
   deploy-dev:
     image: node:8.10-alpine
     environment:
-      AWS_ACCESS_KEY_ID: test
-    #   AWS_ACCESS_KEY_ID:
-    #     from_secret: AWS_ACCESS_KEY_ID
+      AWS_ACCESS_KEY_ID:
+        from_secret: AWS_ACCESS_KEY_ID
     #   AWS_SECRET_ACCESS_KEY:
     #     from_secret: AWS_SECRET_ACCESS_KEY
     commands:
