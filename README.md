@@ -1,2 +1,3 @@
 # sls-drone-test
-repo to test deployment with drone
+
+Repo to test serverless deployment with drone
