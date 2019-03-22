@@ -1,0 +1,7 @@
+pipeline:
+  test:
+    image: node:8.10-alpine
+    commands:
+      - npm run test
+    when:
+      event: push
