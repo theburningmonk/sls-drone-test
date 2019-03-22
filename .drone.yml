@@ -1,7 +1,8 @@
 pipeline:
   deploy-dev:
     image: node:8.10-alpine
-    # environment:
+    environment:
+      AWS_ACCESS_KEY_ID: test
     #   AWS_ACCESS_KEY_ID:
     #     from_secret: AWS_ACCESS_KEY_ID
     #   AWS_SECRET_ACCESS_KEY:
@@ -9,18 +10,5 @@ pipeline:
     commands:
       - npm install
       - npx serverless -- deploy
-    when:
-      event: push
-
-  deploy-staging:
-    image: node:8.10-alpine
-    # environment:
-    #   AWS_ACCESS_KEY_ID:
-    #     from_secret: AWS_ACCESS_KEY_ID
-    #   AWS_SECRET_ACCESS_KEY:
-    #     from_secret: AWS_SECRET_ACCESS_KEY
-    commands:
-      - npm install
-      - npx serverless -- deploy -s staging
     when:
       event: push
