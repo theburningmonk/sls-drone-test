@@ -2,6 +2,7 @@ pipeline:
   deploy-dev:
     image: node:8.10-alpine
     commands:
+      - npm install
       - npx serverless -- deploy
     when:
       event: push
@@ -9,6 +10,7 @@ pipeline:
   deploy-staging:
     image: node:8.10-alpine
     commands:
+      - npm install
       - npx serverless -- deploy -s staging
     when:
       event: push
