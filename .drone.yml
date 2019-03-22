@@ -1,7 +1,14 @@
 pipeline:
-  test:
+  deploy-dev:
     image: node:8.10-alpine
     commands:
-      - npm run test
+      - npx serverless -- deploy
+    when:
+      event: push
+
+  deploy-staging:
+    image: node:8.10-alpine
+    commands:
+      - npx serverless -- deploy -s staging
     when:
       event: push
